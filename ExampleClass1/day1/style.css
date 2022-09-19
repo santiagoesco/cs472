@@ -1,0 +1,67 @@
+#head{
+    grid-area: head;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    background-color: black;
+}
+#nav{
+    grid-area: nav;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    background-color: beige;
+    padding: 2%;
+}
+#menu{
+    grid-area: menu;
+    padding-top: 25%;
+    background-color: burlywood;
+}
+#main{
+    grid-area: main;
+    width: auto;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+    
+}
+
+.interacted{
+    background-color: rebeccapurple;
+}
+#footer{
+    grid-area: footer;
+    width: auto;
+    margin: auto;
+    background-color: darkgray;
+}
+
+@media screen and (min-width:600px) {
+    #container{
+        font-size: larger;
+        display: grid;
+        grid-template-areas:
+            'head head head head'
+            'nav nav nav nav'
+            'menu main main main'
+            'footer footer footer footer';
+    }
+}
+
+@media screen and (max-width:600px) {
+    #container{
+        font-size: larger;
+        display: flex;
+        flex-direction: column;
+    }
+    #nav{
+        display: flex;
+        flex-direction: column;
+    }
+    #nav > a{
+        padding: 15%;
+    }
+}
