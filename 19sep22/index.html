@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script type="text/javascript">
+            class Person{
+                constructor(name,age){
+                    this.name=name;
+                    this.age=age;
+                }
+
+                set name (name){
+                    this._name=name;
+                }
+
+                get name(){
+                    return this._name;
+                }
+
+                printName(){
+                    console.log(this.name);
+                }
+                
+                doMath(x,y){
+                    return x*y;
+                }
+            }
+
+            let p=new Person("Santi",33);
+            p.printName();
+            console.log(p.doMath(5,2));
+            console.log(p);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

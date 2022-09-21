@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0147)https://sakai.cs.miu.edu/access/content/attachment/259ff83b-6840-46c2-8594-e5d9ac69c48c/Assignments/4b43b03c-3ae8-491f-aacb-7a9e77ba8b81/index.html -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bank Accounts</title>
+
+    <link rel="stylesheet" href="./BankAccounts_files/mocha.css" />
+    <script src="./BankAccounts_files/mocha.js"></script>
+    <script src="./BankAccounts_files/chai.js"></script>
+    <script src="account.js"></script>
+    <script src="account.js"></script>
+    <script src="Bank.js"></script>
+    <script>
+      // initialize mocha
+      mocha.setup("bdd");
+      // chai has a lot of stuff, let's make assert global
+      let assert = chai.assert;
+
+      describe("Sum array", function () {
+        it("Sums a given array", function () {
+          assert.equal(10, 10);
+        });
+      });
+
+
+      describe("Get balance value 100 Account Basic", function () {
+        //alert('hello');
+        let acc = new Account(1, 20);
+        acc.deposit(100);
+
+        it("Get balance value 100 : ", function () {
+            assert.equal(acc.getBalance(),100);
+        });
+
+      });
+
+      describe("Checking Account Test", function () {
+    context("Testing the methods on the checking account: ", function () {
+
+        
+        it("Get overdraft value 20: ", function () {
+            assert.equal(acc.getOverdraft(),20);
+        });
+        it("Set overdraft value 50: ", function () {
+            acc.setOverdraft(50);
+            assert.equal(acc.getOverdraft(),50);
+        });
+        it("Test withdraw 140 and overdraft ", function () {
+            acc.withdraw(140)
+            assert.equal(acc.getBalance(),-40 );
+        });
+
+        it("Test toString method ", function () {
+            assert.equal(acc.toString(),"Checking Account 1 : balance : -40 Overdraft : 50");
+        });
+
+    });
+});
+
+    </script>
+  </head>
+
+  <body>
+    <div id="mocha">
+      <ul id="mocha-stats">
+        <li class="progress"><canvas width="40" height="40"></canvas></li>
+        <li class="passes">
+          <a href="javascript:void(0);">passes:</a> <em>0</em>
+        </li>
+        <li class="failures">
+          <a href="javascript:void(0);">failures:</a> <em>0</em>
+        </li>
+        <li class="duration">duration: <em>0</em>s</li>
+      </ul>
+      <ul id="mocha-report"></ul>
+    </div>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
