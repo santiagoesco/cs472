@@ -1,0 +1,16 @@
+<%- include('./header.ejs') %>
+</head>
+<body>
+    <h1>Product Detail...</h1>
+    <div>
+        <b>Id:</b> <%= product.id %><br/>
+        <b>Product:</b> <%= product.name %><br/>
+        <b>Price:</b> <%= product.price %><br/>
+        <b>Description:</b> <%= product.description %><br/>
+    </div>
+    <form action="/add" method="post">
+        <input type="button" value="Add product to cart!" />
+    </form>
+
+</body>
+<%- include('./footer.ejs') %>
